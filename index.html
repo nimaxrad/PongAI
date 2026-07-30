@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05050b" />
+    <title>Skinned Pong</title>
+  </head>
+  <body>
+    <main id="app" class="app-shell" aria-label="Skinned Pong game canvas">
+      <section class="canvas-frame" aria-label="Play area">
+        <canvas id="game-canvas" aria-label="Skinned Pong play field"></canvas>
+      </section>
+      <div class="crt-overlay" aria-hidden="true"></div>
+      <aside class="score-hud" aria-label="Current score" aria-live="polite">
+        <span class="score-side score-side--player">
+          <span class="score-label">Player</span>
+          <span id="player-score" class="score-value">0</span>
+        </span>
+        <span class="score-divider" aria-hidden="true">:</span>
+        <span class="score-side score-side--opponent">
+          <span id="opponent-score" class="score-value">0</span>
+          <span class="score-label">AI</span>
+        </span>
+      </aside>
+      <section
+        id="start-screen"
+        class="start-screen"
+        aria-label="Start screen"
+      >
+        <div class="start-screen__panel">
+          <h1>Skinned Pong</h1>
+          <div class="start-screen__actions">
+            <button id="start-match-button" class="arcade-button" type="button">
+              Start Match
+            </button>
+            <button id="open-skins-button" class="arcade-button arcade-button--secondary" type="button">
+              Skins
+            </button>
+          </div>
+        </div>
+      </section>
+      <section
+        id="skin-selection-screen"
+        class="skin-screen"
+        aria-label="Skin selection"
+        hidden
+      >
+        <div class="skin-screen__panel">
+          <div class="skin-screen__header">
+            <h1>Skins</h1>
+            <div class="skin-screen__actions">
+              <button id="skin-back-button" class="arcade-button arcade-button--secondary" type="button">
+                Back
+              </button>
+              <button id="skin-start-match-button" class="arcade-button" type="button">
+                Start Match
+              </button>
+            </div>
+          </div>
+          <div id="skin-picker-list" class="skin-grid"></div>
+        </div>
+      </section>
+      <section
+        id="match-end-screen"
+        class="match-end-screen"
+        aria-label="Match result"
+        aria-live="assertive"
+        hidden
+      >
+        <div class="match-end-screen__panel">
+          <div class="match-end-screen__summary">
+            <h1 id="match-result-title">Match Over</h1>
+            <p id="match-final-score" class="match-end-screen__score">0 : 0</p>
+          </div>
+          <div class="match-end-screen__actions">
+            <button id="replay-match-button" class="arcade-button" type="button">
+              Replay
+            </button>
+            <button id="end-change-skin-button" class="arcade-button arcade-button--secondary" type="button">
+              Change Skin
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
